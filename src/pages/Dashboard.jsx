@@ -6,20 +6,22 @@ function Dashboard() {
     <div className="hub">
       <aside className="sidebar">
         <div className="brand">
-          <div className="rj-logo">RJ</div>
+          <div className="logo-wrap">
+            <div className="rj-logo">RJ</div>
+          </div>
           <div>
-            <h2>Traveler Hub</h2>
-            <p>Transition Team</p>
+            <h2>Raymond James</h2>
+            <p>Traveler Hub</p>
           </div>
         </div>
 
         <nav className="nav">
-          <Link to="/" className="active">⌂ Home</Link>
-          <Link to="/map">⌖ Traveler Map</Link>
-          <Link to="/yearbook">▣ Yearbook</Link>
-          <Link to="/assistant">✦ AI Assistant</Link>
-          <Link to="/resources">□ Resources</Link>
-          <Link to="/community">♧ Community</Link>
+          <Link to="/" className="active">🏠 <span>Dashboard</span></Link>
+          <Link to="/map">🗺️ <span>Traveler Map</span></Link>
+          <Link to="/yearbook">📸 <span>Yearbook</span></Link>
+          <Link to="/assistant">✨ <span>AI Assistant</span></Link>
+          <Link to="/resources">📁 <span>Resources</span></Link>
+          <Link to="/community">💬 <span>Community</span></Link>
         </nav>
 
         <div className="mission-card">
@@ -96,7 +98,20 @@ function Dashboard() {
               </div>
 
               <div className="profiles">
-                {["Sam T.", "Alex Johnson", "Jordan Lee", "Taylor Morgan"].map((name) => (
+                <Link to="/sam-profile" className="profile-link">
+                  <div className="profile">
+                    <div className="photo">S</div>
+                    <h3>Sam T.</h3>
+                    <p>Transition Consultant</p>
+                    <div className="tags">
+                      <span>Tech Expert</span>
+                      <span>3+ Years</span>
+                    </div>
+                    <div className="icons">💬 ✉️ 🔗</div>
+                  </div>
+                </Link>
+
+                {["Diejonia A.", "Brooke D.", "Jamie F."].map((name) => (
                   <div className="profile" key={name}>
                     <div className="photo">{name[0]}</div>
                     <h3>{name}</h3>

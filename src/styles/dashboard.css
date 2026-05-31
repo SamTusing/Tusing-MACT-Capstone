@@ -18,40 +18,56 @@ body {
 
 .sidebar {
   width: 265px;
-  background: linear-gradient(180deg, #061d3a, #082a55);
-  color: white;
+  background: #ffffff;
+  color: #0b2344;
   padding: 24px 18px;
   display: flex;
   flex-direction: column;
   gap: 24px;
+  border-right: 1px solid #e3ebf5;
+  box-shadow: 8px 0 30px rgba(18, 38, 63, 0.06);
 }
 
 .brand {
   display: flex;
   align-items: center;
   gap: 12px;
+  padding: 6px 6px 18px;
+  border-bottom: 1px solid #e3ebf5;
+}
+
+.logo-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: #eef5ff;
+  display: grid;
+  place-items: center;
 }
 
 .rj-logo {
-  width: 48px;
-  height: 48px;
+  width: 42px;
+  height: 42px;
   border-radius: 12px;
-  background: #1374f2;
+  background: #082a55;
+  color: #ffffff;
   display: grid;
   place-items: center;
-  font-weight: 800;
-  font-size: 22px;
+  font-weight: 900;
+  font-size: 18px;
+  letter-spacing: -0.03em;
 }
 
 .brand h2 {
   margin: 0;
-  font-size: 18px;
+  font-size: 17px;
+  color: #071f3f;
 }
 
 .brand p {
   margin: 3px 0 0;
-  font-size: 12px;
-  color: #b9cde5;
+  font-size: 13px;
+  color: #66758c;
 }
 
 .nav {
@@ -61,31 +77,48 @@ body {
 }
 
 .nav a {
-  padding: 12px 14px;
-  border-radius: 12px;
-  color: #d7e6f7;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 14px;
+  border-radius: 14px;
+  color: #53657d;
   font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.2s ease;
 }
 
-.nav a.active,
 .nav a:hover {
-  background: #0d5fd1;
-  color: white;
+  background: #eef5ff;
+  color: #082a55;
+  text-decoration: none;
+}
+
+.nav a.active {
+  background: #082a55;
+  color: #ffffff;
+  box-shadow: 0 10px 24px rgba(8, 42, 85, 0.22);
+}
+
+.nav a span {
+  text-decoration: none;
 }
 
 .mission-card,
 .quick-links {
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid #e3ebf5;
   border-radius: 18px;
   padding: 18px;
-  background: rgba(255, 255, 255, 0.06);
+  background: #f8fbff;
 }
 
 .plane {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: #0b376f;
+  background: #eef5ff;
+  color: #082a55;
   display: grid;
   place-items: center;
   margin: 0 auto 12px;
@@ -99,21 +132,23 @@ body {
 .mission-card p {
   font-size: 15px;
   line-height: 1.4;
+  color: #0b2344;
 }
 
 .mission-card small {
-  color: #b9cde5;
+  color: #66758c;
 }
 
 .quick-links h3 {
   margin-top: 0;
   font-size: 15px;
+  color: #071f3f;
 }
 
 .quick-links p {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid #e3ebf5;
   padding-bottom: 10px;
-  color: #d7e6f7;
+  color: #53657d;
   font-size: 13px;
 }
 
@@ -507,4 +542,35 @@ body {
   .bottom-bar {
     flex-direction: column;
   }
+
+.profile-link:hover .profile {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+}
+
+.profile {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+ .profiles a,
+.profiles a:visited,
+.profiles a:hover,
+.profiles a:active,
+.profile-link,
+.profile-link:visited,
+.profile-link:hover,
+.profile-link:active,
+.profile-link *,
+.profile-link *:hover {
+  text-decoration: none !important;
+  color: inherit;
+}
+
+.section-header a,
+.section-header a:hover,
+.section-header a:visited,
+.section-header a:active {
+  text-decoration: none !important;
+}
 }
