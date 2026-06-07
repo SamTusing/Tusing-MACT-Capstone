@@ -46,7 +46,7 @@
 
 .yearbook-tabs {
   display: flex;
-  gap: 34px;
+  gap: 28px;
   border-bottom: 1px solid #d7e1ee;
   margin-bottom: 28px;
 }
@@ -55,14 +55,38 @@
   border: none;
   background: transparent;
   padding: 0 0 14px;
-  font-weight: 800;
+  font-weight: 700;
+  font-size: 15px;
   color: #53657d;
   cursor: pointer;
+  transition: all 0.2s ease;
+
+  /* removes blue browser outlines */
+  outline: none;
+  box-shadow: none;
 }
 
-.yearbook-tabs .active {
+.yearbook-tabs button:hover {
+  color: #082a55;
+}
+
+.yearbook-tabs button,
+.yearbook-tabs button:focus,
+.yearbook-tabs button:focus-visible,
+.yearbook-tabs button:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.yearbook-tabs button {
+  padding: 10px 18px;
+  border-radius: 999px;
+}
+
+.yearbook-tabs button.active {
+  background: #eef6ff;
   color: #0d5fd1;
-  border-bottom: 3px solid #0d5fd1;
+  border-bottom: none;
 }
 
 .yearbook-layout {
@@ -469,4 +493,70 @@
   .directory-grid-large {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+.photo-map-wrapper {
+  position: relative;
+  min-height: 560px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid #d7e1ee;
+  background: linear-gradient(180deg, #dceeff, #f8fbff);
+}
+
+.yearbook-photo-map {
+  width: 100%;
+  height: 560px;
+  display: block;
+}
+
+.photo-map-state {
+  fill: #cfe0f2;
+  stroke: white;
+  stroke-width: 0.8;
+}
+
+.photo-map-city {
+  cursor: pointer;
+}
+
+.photo-map-dot {
+  fill: #0d5fd1;
+  stroke: white;
+  stroke-width: 3;
+  filter: drop-shadow(0 8px 14px rgba(13, 95, 209, 0.25));
+}
+
+.photo-map-city:hover .photo-map-dot {
+  fill: #082a55;
+}
+
+.photo-map-count {
+  fill: white;
+  font-size: 11px;
+  font-weight: 900;
+  pointer-events: none;
+}
+
+.photo-map-label {
+  font-size: 13px;
+  font-weight: 900;
+  fill: #071f3f;
+  paint-order: stroke;
+  stroke: white;
+  stroke-width: 4px;
+}
+
+.photo-map-tooltip {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  background: white;
+  border: 1px solid #d7e1ee;
+  border-radius: 14px;
+  padding: 10px 12px;
+  color: #071f3f;
+  box-shadow: 0 14px 30px rgba(18, 38, 63, 0.16);
+  font-size: 13px;
+  z-index: 10;
 }

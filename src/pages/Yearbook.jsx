@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "../styles/dashboard.css";
 import "../styles/travelerMap.css";
 import "../styles/yearbook.css";
+import YearbookPhotoMap from "../components/YearbookPhotoMap";
 
 import { galleryCategories } from "../data/galleryImages";
 
@@ -24,31 +25,31 @@ const travelers = [
     tags: ["Training", "Operations"],
   },
   {
-    name: "RM Lead",
+    name: "TM Supervisor",
     role: "Team Lead",
     location: "St. Petersburg, FL",
-    initials: "RM",
+    initials: "TS",
     tags: ["Leadership", "Strategy"],
   },
   {
-    name: "Jordan P.",
+    name: "Traveler D.",
     role: "Transition Consultant",
     location: "Atlanta, GA",
-    initials: "JP",
+    initials: "TD",
     tags: ["Onboarding", "Support"],
   },
   {
-    name: "Alex R.",
+    name: "Traveler E.",
     role: "Transition Consultant",
     location: "Denver, CO",
-    initials: "AR",
+    initials: "TE",
     tags: ["Optimization", "Tech"],
   },
   {
-    name: "Brooke D.",
+    name: "Traveler F.",
     role: "Transition Consultant",
     location: "Nashville, TN",
-    initials: "BD",
+    initials: "TF",
     tags: ["Client Support", "Training"],
   },
 ];
@@ -94,6 +95,7 @@ const moments = [
 
 function Yearbook() {
   const [activeTab, setActiveTab] = useState("feed");
+  const [selectedCity, setSelectedCity] = useState(null);
 
   const categories = Object.entries(galleryCategories).slice(0, 8);
 
@@ -381,20 +383,19 @@ function Yearbook() {
           </section>
         )}
 
-        {activeTab === "photoMap" && (
-          <section className="panel">
-            <div className="section-header">
-              <div>
-                <p className="label">Photo Map</p>
-                <h2>Memories Across the Country</h2>
-              </div>
-            </div>
+        
+       {activeTab === "photoMap" && (
+  <section className="panel">
+    <div className="section-header">
+      <div>
+        <p className="label">Photo Map</p>
+        <h2>Memories Across the Country</h2>
+      </div>
+    </div>
 
-            <div className="photo-map-placeholder">
-              Interactive D3 photo map coming next.
-            </div>
-          </section>
-        )}
+    <YearbookPhotoMap onCitySelect={setSelectedCity} />
+  </section>
+)}
 
         {activeTab === "directory" && (
           <section className="panel">
@@ -439,6 +440,28 @@ function Yearbook() {
             </div>
           </section>
         )}
+
+        {selectedCity && (
+  <div className="modal-backdrop" onClick={() => setSelectedCity(null)}>
+    <div className="profile-modal" onClick={(e) => e.stopPropagation()}>
+      <button className="modal-close" onClick={() => setSelectedCity(null)}>
+        ×
+      </button>
+
+      <h2>{selectedCity.city}</h2>
+      <p>{selectedCity.count} submitted yearbook memories from this city.</p>
+
+      <div className="photo-placeholder-grid">
+        {Object.values(galleryCategories)
+          .flatMap((category) => category.images.slice(0, 2))
+          .slice(0, selectedCity.count)
+          .map((image, index) => (
+            <img key={index} src={image} alt={`${selectedCity.city} memory`} />
+          ))}
+      </div>
+    </div>
+  </div>
+)}
       </main>
     </div>
   );
