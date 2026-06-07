@@ -1,14 +1,72 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/dashboard.css";
 
+import rjLogo from "../assets/RJlogo.jpg";
+import TravelerHubMap from "../components/TravelerHubMap";
+import { galleryCategories } from "../data/galleryImages";
+
+const cityRecommendations = [
+  {
+    category: "Phone Eats First",
+    badgeKey: "phoneEats",
+    title: "Tomukun Noodle Bar",
+    city: "Ann Arbor, MI",
+    note: "Traveler-approved ramen stop.",
+  },
+  {
+    category: "Sweet Tooth",
+    badgeKey: "sweetTooth",
+    title: "Scoops Homemade Ice Cream",
+    city: "Little Rock, AR",
+    note: "Best cotton candy ice cream.",
+  },
+  {
+    category: "Americana",
+    badgeKey: "americana",
+    title: "The Sixth Floor Museum",
+    city: "Dallas, TX",
+    note: "Great local history stop.",
+  },
+];
+
+const memoryImages = Object.entries(galleryCategories)
+  .flatMap(([key, category]) =>
+    category.images.slice(0, 2).map((image) => ({
+      image,
+      title: category.title,
+      badge: category.badge,
+      key,
+    }))
+  )
+  .slice(0, 8);
+
 function Dashboard() {
+  const [mapMode, setMapMode] = useState("active");
+  const [memoryIndex, setMemoryIndex] = useState(0);
+
+  const currentMemory = memoryImages[memoryIndex];
+
+  const nextMemory = () => {
+    setMemoryIndex((prev) =>
+      prev === memoryImages.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const previousMemory = () => {
+    setMemoryIndex((prev) =>
+      prev === 0 ? memoryImages.length - 1 : prev - 1
+    );
+  };
+
   return (
     <div className="hub">
       <aside className="sidebar">
         <div className="brand">
           <div className="logo-wrap">
-            <div className="rj-logo">RJ</div>
+            <img src={rjLogo} alt="Raymond James Logo" className="rj-logo-img" />
           </div>
+
           <div>
             <h2>Raymond James</h2>
             <p>Traveler Hub</p>
@@ -61,31 +119,82 @@ function Dashboard() {
               <div className="section-header">
                 <div>
                   <p className="label">Traveler Map</p>
-                  <h2>Active Assignments</h2>
+                  <h2>Explore the Traveler Network</h2>
                 </div>
-                <button>Filter by City</button>
+
+                <Link to="/map">Open Full Map →</Link>
               </div>
 
-              <div className="tabs">
-                <span className="selected">All Travelers</span>
-                <span>On Assignment</span>
-                <span>Heading Out</span>
-                <span>Available</span>
+              <div className="map-mode-buttons">
+                <button
+                  className={mapMode === "active" ? "active" : ""}
+                  onClick={() => setMapMode("active")}
+                >
+                  Active Travelers
+                </button>
+
+                <button
+                  className={mapMode === "recommendations" ? "active" : ""}
+                  onClick={() => setMapMode("recommendations")}
+                >
+                  City Recommendations
+                </button>
+
+                <button
+                  className={mapMode === "memories" ? "active" : ""}
+                  onClick={() => setMapMode("memories")}
+                >
+                  Yearbook Memories
+                </button>
               </div>
 
-              <div className="map">
-                <div className="pin seattle">Seattle</div>
-                <div className="pin denver">Denver</div>
-                <div className="pin chicago">Chicago</div>
-                <div className="pin ny">New York</div>
-                <div className="pin dallas">Dallas</div>
-                <div className="pin atlanta">Atlanta</div>
-                <div className="pin miami">Miami</div>
-                <div className="dot sf">3</div>
-                <div className="dot midwest">2</div>
-                <div className="dot northeast">4</div>
-                <div className="dot florida">2</div>
-              </div>
+              {mapMode === "active" && (
+                <div className="dashboard-d3-map">
+                  <TravelerHubMap />
+                </div>
+              )}
+
+              {mapMode === "recommendations" && (
+                <div className="dashboard-recommendations-preview">
+                  {cityRecommendations.map((item) => (
+                    <div className="dashboard-rec-card" key={item.title}>
+                      <img
+                        src={galleryCategories[item.badgeKey].badge}
+                        alt={item.category}
+                      />
+                      <div>
+                        <span>{item.category}</span>
+                        <h3>{item.title}</h3>
+                        <p>{item.city}</p>
+                        <small>{item.note}</small>
+                      </div>
+                    </div>
+                  ))}
+
+                  <Link to="/map" className="preview-link">
+                    View all city recommendations →
+                  </Link>
+                </div>
+              )}
+
+              {mapMode === "memories" && currentMemory && (
+                <div className="dashboard-memory-carousel">
+                  <button onClick={previousMemory}>‹</button>
+
+                  <div className="memory-slide">
+                    <img src={currentMemory.image} alt={currentMemory.title} />
+                    <div className="memory-caption">
+                      <img src={currentMemory.badge} alt={currentMemory.title} />
+                      <div>
+                        <span>Yearbook Memory</span>
+                        <h3>{currentMemory.title}</h3>
+                      </div>
+                    </div>
+                  </div>
+
+                  <button onClick={nextMemory}>›</button>
+                </div>
+              )}
             </section>
 
             <section className="panel">
@@ -94,6 +203,7 @@ function Dashboard() {
                   <p className="label">Traveler Yearbook</p>
                   <h2>Team Directory</h2>
                 </div>
+
                 <Link to="/yearbook">View All Travelers →</Link>
               </div>
 
@@ -132,6 +242,8 @@ function Dashboard() {
                   <p className="label">Resource Center</p>
                   <h2>Helpful Links</h2>
                 </div>
+
+                <Link to="/resources">Open Resources →</Link>
               </div>
 
               <div className="resources">
@@ -152,6 +264,7 @@ function Dashboard() {
                   <p className="label">RJ Assistant</p>
                   <h2>AI Support</h2>
                 </div>
+
                 <span className="online">● Online</span>
               </div>
 
@@ -173,6 +286,8 @@ function Dashboard() {
                   <p className="label">Community Highlights</p>
                   <h2>Recent Posts</h2>
                 </div>
+
+                <Link to="/community">View All →</Link>
               </div>
 
               <div className="post">

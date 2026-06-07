@@ -1,0 +1,120 @@
+.restaurant-card {
+  display: block;
+  background: white;
+  border: 1px solid #d7e1ee;
+  border-radius: 20px;
+  padding: 20px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08);
+}
+
+.restaurant-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.restaurant-name {
+  font-size: 18px;
+  font-weight: 800;
+  color: #071f3f;
+}
+
+.restaurant-location {
+  font-size: 13px;
+  font-weight: 700;
+  color: #7b8ba1;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.restaurant-note {
+  margin-top: 10px;
+  color: #53657d;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.restaurant-footer {
+  margin-top: 16px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.google-link {
+  color: #0b5fc6;
+  font-weight: 800;
+}
+.recommendation-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.recommendation-preview-item {
+  padding: 14px;
+  border-radius: 14px;
+  background: #f8fbff;
+  border: 1px solid #d7e1ee;
+}
+
+.recommendation-preview-item strong {
+  color: #071f3f;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.recommendation-preview-item p {
+  margin: 0;
+  color: #53657d;
+  font-size: 14px;
+}
+.recommendation-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.recommendation-preview-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+
+  padding: 14px;
+  border-radius: 14px;
+  background: #f8fbff;
+  border: 1px solid #d7e1ee;
+}
+
+.recommendation-preview-item strong {
+  display: block;
+  color: #071f3f;
+  margin-bottom: 4px;
+}
+
+.recommendation-preview-item p {
+  margin: 0;
+  color: #53657d;
+  font-size: 14px;
+}
+
+.preview-google-link {
+  white-space: nowrap;
+  color: #0b5fc6;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.preview-google-link:hover {
+  text-decoration: underline;
+}

@@ -574,3 +574,251 @@ body {
   text-decoration: none !important;
 }
 }
+
+.map-mode-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.map-mode-buttons button {
+  border: 1px solid #d7e1ee;
+  background: #f8fbff;
+  color: #082a55;
+  border-radius: 999px;
+  padding: 10px 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.map-mode-buttons button.active,
+.map-mode-buttons button:hover {
+  background: #082a55;
+  color: white;
+}
+
+.map-preview-label {
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  z-index: 5;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid #d7e1ee;
+  border-radius: 16px;
+  padding: 12px 14px;
+  max-width: 260px;
+  box-shadow: 0 10px 24px rgba(18, 38, 63, 0.08);
+}
+
+.map-preview-label strong {
+  color: #071f3f;
+}
+
+.map-preview-label p {
+  margin: 4px 0 0;
+  color: #53657d;
+  font-size: 13px;
+}
+
+.photo-city {
+  position: absolute;
+  z-index: 6;
+  cursor: pointer;
+}
+
+.photo-city span {
+  background: white;
+  color: #082a55;
+  border: 1px solid #d7e1ee;
+  border-radius: 999px;
+  padding: 5px 8px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.city-photo-preview {
+  opacity: 0;
+  transform: translateY(8px);
+  margin-top: 8px;
+  width: 88px;
+  height: 64px;
+  background: white;
+  border: 1px solid #d7e1ee;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  font-size: 26px;
+  box-shadow: 0 12px 24px rgba(18, 38, 63, 0.14);
+  transition: 0.2s ease;
+}
+
+.photo-city:hover .city-photo-preview {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.photo-nashville {
+  left: 62%;
+  top: 56%;
+}
+
+.photo-phoenix {
+  left: 28%;
+  top: 60%;
+}
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rj-logo-img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.dashboard-d3-map {
+  min-height: 330px;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid #d7e1ee;
+}
+
+.dashboard-d3-map .hub-map-wrapper {
+  min-height: 330px;
+}
+
+.dashboard-d3-map .hub-d3-map {
+  height: 330px;
+  border-radius: 18px;
+}
+
+.dashboard-d3-map .hub-city-label {
+  font-size: 10px;
+}
+
+.dashboard-d3-map .hub-city-count {
+  font-size: 9px;
+}
+
+.dashboard-d3-map .hub-city-dot {
+  stroke-width: 2;
+}
+
+.dashboard-d3-map .hub-map-route {
+  stroke-width: 2;
+}
+
+.dashboard-recommendations-preview {
+  min-height: 330px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  align-items: stretch;
+}
+
+.dashboard-rec-card {
+  background: #f8fbff;
+  border: 1px solid #d7e1ee;
+  border-radius: 18px;
+  padding: 16px;
+}
+
+.dashboard-rec-card img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.dashboard-rec-card span {
+  color: #0b5fc6;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.dashboard-rec-card h3 {
+  margin: 8px 0 4px;
+  color: #071f3f;
+}
+
+.dashboard-rec-card p,
+.dashboard-rec-card small {
+  color: #53657d;
+}
+
+.preview-link {
+  grid-column: 1 / -1;
+  text-decoration: none;
+  color: #0b5fc6;
+  font-weight: 900;
+}
+
+.dashboard-memory-carousel {
+  min-height: 330px;
+  display: grid;
+  grid-template-columns: 48px 1fr 48px;
+  gap: 14px;
+  align-items: center;
+}
+
+.dashboard-memory-carousel > button {
+  height: 48px;
+  width: 48px;
+  border: none;
+  border-radius: 50%;
+  background: #082a55;
+  color: white;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.memory-slide {
+  height: 330px;
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #f8fbff;
+  border: 1px solid #d7e1ee;
+}
+
+.memory-slide > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.memory-caption {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  right: 18px;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 16px;
+  padding: 12px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.memory-caption img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.memory-caption span {
+  color: #0b5fc6;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.memory-caption h3 {
+  margin: 2px 0 0;
+  color: #071f3f;
+}
