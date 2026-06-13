@@ -1,0 +1,140 @@
+.resources-page {
+  flex: 1;
+  padding: 28px;
+  background: #f4f8fd;
+  overflow-y: auto;
+}
+
+.resources-hero {
+  margin-bottom: 24px;
+}
+
+.resources-hero h1 {
+  margin: 0;
+  font-size: 42px;
+  color: #071f3f;
+}
+
+.hero-subtitle {
+  color: #53657d;
+  margin-top: 10px;
+}
+
+.resource-search {
+  background: white;
+  border: 1px solid #d7e1ee;
+  border-radius: 18px;
+  padding: 18px;
+  margin-bottom: 24px;
+  color: #8a9ab0;
+}
+
+.resource-section {
+  margin-bottom: 32px;
+}
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.resource-card {
+  background: white;
+  border-radius: 22px;
+  padding: 24px;
+  text-align: center;
+  border: 1px solid #d7e1ee;
+  transition: 0.2s ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-4px);
+}
+
+.resource-card h3 {
+  margin: 12px 0;
+  color: #071f3f;
+}
+
+.resource-card p {
+  color: #53657d;
+}
+
+.study-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.8fr;
+  gap: 18px;
+}
+
+.study-card {
+  background: white;
+  border-radius: 22px;
+  padding: 24px;
+  border: 1px solid #d7e1ee;
+}
+
+.study-card h3 {
+  margin-top: 0;
+  color: #071f3f;
+}
+
+.study-card p {
+  color: #53657d;
+}
+
+.study-link {
+  display: block;
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 12px;
+  background: #eef6ff;
+  color: #0d5fd1;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.study-link:hover {
+  background: #dcecff;
+}
+
+.progress-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.progress-label {
+  margin-top: 18px;
+  margin-bottom: 8px;
+  font-weight: 700;
+  color: #071f3f;
+}
+
+.progress-bar {
+  height: 12px;
+  border-radius: 999px;
+  background: #e5edf7;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #0d5fd1;
+  border-radius: 999px;
+}
+
+.progress-card span {
+  margin-top: 12px;
+  color: #53657d;
+}
+
+@media (max-width: 1200px) {
+  .resource-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .study-grid {
+    grid-template-columns: 1fr;
+  }
+}
