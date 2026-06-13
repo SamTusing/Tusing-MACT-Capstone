@@ -3,7 +3,7 @@ import phoneEatsBadge from "../assets/galleries/badges/phoneeatsfirst.JPG";
 import sweetToothBadge from "../assets/galleries/badges/sweettooth.JPG";
 import americanaBadge from "../assets/galleries/badges/americana.JPG";
 import flightyBadge from "../assets/galleries/badges/flighty.JPG";
-import howdyBadge from "../assets/galleries/badges/howdy.jpg";
+import howdyBadge from "../assets/galleries/badges/howdy.JPG";
 import hikeBadge from "../assets/galleries/badges/takeahike.JPG";
 import sportsBadge from "../assets/galleries/badges/goteamgosports.JPG";
 
