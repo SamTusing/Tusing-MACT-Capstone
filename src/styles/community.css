@@ -1,0 +1,230 @@
+.community-page {
+  flex: 1;
+  padding: 28px;
+  background: #f4f8fd;
+  overflow-y: auto;
+}
+
+.community-hero h1 {
+  margin: 0;
+  font-size: 42px;
+  color: #071f3f;
+}
+
+.hero-subtitle {
+  margin-top: 10px;
+  color: #53657d;
+}
+
+.community-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.community-main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.community-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.create-post-card {
+  background: white;
+  border-radius: 22px;
+  padding: 18px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  box-shadow: 0 10px 20px rgba(18,38,63,.05);
+}
+
+.create-avatar,
+.post-avatar,
+.spotlight-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #0d5fd1;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+}
+
+.post-placeholder {
+  flex: 1;
+  background: #f8fbff;
+  border-radius: 999px;
+  padding: 14px 18px;
+  color: #8a9ab0;
+}
+
+.create-post-card button,
+.join-book-club {
+  border: none;
+  background: #0d5fd1;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.community-post,
+.sidebar-card,
+.book-club-card,
+.groups-section {
+  background: white;
+  border-radius: 22px;
+  padding: 22px;
+  box-shadow: 0 10px 20px rgba(18,38,63,.05);
+}
+
+.post-header {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.post-header h3 {
+  margin: 0;
+}
+
+.post-header span {
+  color: #53657d;
+}
+
+.post-actions {
+  margin-top: 16px;
+  color: #53657d;
+}
+
+.group-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.group-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.group-card-image {
+  position: relative;
+  height: 180px;
+
+  border-radius: 20px;
+  overflow: hidden;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.group-card-image:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(18, 38, 63, 0.12);
+}
+
+.group-card-overlay {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: flex-end;
+
+  padding: 18px;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0.3),
+      transparent
+    );
+}
+
+.group-card-overlay h3 {
+  margin: 0;
+  color: white;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.book-club-content {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.book-cover {
+  width: 100px;
+  height: 130px;
+  border-radius: 12px;
+  background: #eef6ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 42px;
+}
+
+.sidebar-card h3 {
+  margin-top: 0;
+  color: #071f3f;
+}
+
+.sidebar-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-card li {
+  padding: 8px 0;
+  color: #53657d;
+}
+
+.spotlight-avatar {
+  margin: 12px auto;
+}
+
+.sidebar-card h4 {
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.sidebar-card span,
+.sidebar-card p {
+  text-align: center;
+  display: block;
+  color: #53657d;
+}
+
+@media (max-width: 1200px) {
+  .community-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .group-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .book-club-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}

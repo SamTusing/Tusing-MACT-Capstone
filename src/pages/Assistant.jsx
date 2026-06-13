@@ -27,166 +27,112 @@ function Assistant() {
         </nav>
       </aside>
 
-      <main className="assistant-page">
-        <section className="assistant-hero">
-          <div>
-            <p className="label">RJ Assistant</p>
 
-            <h1>Traveler Hub Assistant</h1>
+      <main className="assistant-page chatbot-theme">
 
-            <p className="hero-subtitle">
-              Your digital travel companion for resources,
-              recommendations, assignments, and support.
-            </p>
-          </div>
+  <div className="tiny-plane plane-a">✈</div>
+<div className="tiny-plane plane-b">✈</div>
+<div className="tiny-plane plane-c">✈</div>
+<div className="tiny-plane plane-d">✈</div>
+<div className="tiny-plane plane-e">✈</div>
+<div className="tiny-plane plane-f">✈</div>
 
-          <div className="assistant-status">
-            <span className="online-dot"></span>
-            Available
-          </div>
-        </section>
-
-        <section className="assistant-top-grid">
-          <div className="assistant-welcome-card">
-            <div className="assistant-icon">✨</div>
-
+        <section className="chatbot-shell">
+          <div className="chatbot-header">
             <div>
-              <h2>Hello Sam</h2>
+              <p className="label">Traveler Hub Assistant</p>
 
-              <p>
-                Welcome back. What can I help you find today?
+              <h1>How can I help today?</h1>
+
+              <p className="chat-subtitle">
+                Travel support, team connections, local recommendations,
+                resources, and assignment guidance.
               </p>
             </div>
+
+            <div className="assistant-status">
+              <span className="online-dot"></span>
+              Available
+            </div>
           </div>
 
-          <div className="assistant-quick-actions">
-            <h3>Quick Actions</h3>
+          <div className="chat-window-large">
 
+            <div className="chat-message bot">
+              <div className="bot-avatar">✨</div>
+
+              <div className="message-content">
+                Hi Sam! I'm your Traveler Hub Assistant.
+                I can help with travel resources, city recommendations,
+                team connections, and assignment support.
+              </div>
+            </div>
+
+            <div className="chat-message user-preview">
+              <div className="message-content">
+                Where can I find the transition checklist?
+              </div>
+            </div>
+
+            <div className="chat-message bot">
+              <div className="bot-avatar">✨</div>
+
+              <div className="message-content">
+                The Transition Checklist can be found in the Resource Center
+                under Transition Process. I can also surface related
+                templates and onboarding documents.
+              </div>
+            </div>
+          </div>
+
+          <div className="suggested-prompts">
             <button>📋 Transition Checklist</button>
-            <button>✈ Travel Policy</button>
-            <button>💰 Expense Guidelines</button>
-            <button>👥 Traveler Directory</button>
+            <button>🍴 Nashville Recommendations</button>
+            <button>✈ Per Diem Guidance</button>
+            <button>👥 Find Travelers in Phoenix</button>
+            <button>🏨 Hotel Recommendations</button>
+            <button>📁 Technology Resources</button>
+          </div>
+
+          <div className="chat-input-bar">
+            <span>Ask the Traveler Hub Assistant...</span>
+
+            <button>
+              ➤
+            </button>
           </div>
         </section>
 
-        <section className="assistant-chat-window">
-          <div className="assistant-message">
-            Welcome to the Traveler Hub Assistant.
+        <aside className="chat-helper-panel">
+
+          <h3>I Can Help With</h3>
+
+          <div className="helper-card">
+            📋 Resource Lookup
           </div>
 
-          <div className="assistant-message">
-            I can help with travel recommendations,
-            assignment support, resources, and team connections.
+          <div className="helper-card">
+            🍴 City Recommendations
           </div>
 
-          <div className="assistant-prompts">
-            <button>
-              Where can I find transition resources?
-            </button>
-
-            <button>
-              Show travelers currently in Nashville
-            </button>
-
-            <button>
-              Recommend restaurants in Phoenix
-            </button>
-
-            <button>
-              Find airport lounge information
-            </button>
-
-            <button>
-              Show travel policy
-            </button>
-
-            <button>
-              Per diem guidance
-            </button>
+          <div className="helper-card">
+            👥 Traveler Directory
           </div>
 
-          <div className="assistant-input">
-            Ask me anything...
+          <div className="helper-card">
+            ✈ Travel Guidance
           </div>
-        </section>
 
-        <div className="assistant-content-grid">
-          <section className="assistant-tools">
-            <h2>Traveler Tools</h2>
+          <div className="helper-card">
+            🗺 Assignment Locations
+          </div>
 
-            <div className="assistant-tools-grid">
-              <div className="tool-card">
-                ✈
-                <h3>Travel Help</h3>
-                <p>Flights, hotels, transportation.</p>
-              </div>
+          <div className="helper-card">
+            💰 Expense Support
+          </div>
 
-              <div className="tool-card">
-                🍴
-                <h3>City Recommendations</h3>
-                <p>Traveler-approved local favorites.</p>
-              </div>
+        </aside>
 
-              <div className="tool-card">
-                👥
-                <h3>Traveler Directory</h3>
-                <p>Connect with teammates.</p>
-              </div>
-
-              <div className="tool-card">
-                📋
-                <h3>Resources</h3>
-                <p>Forms, templates, checklists.</p>
-              </div>
-
-              <div className="tool-card">
-                💰
-                <h3>Expenses</h3>
-                <p>Per diem and reimbursement help.</p>
-              </div>
-
-              <div className="tool-card">
-                🏨
-                <h3>Hotel Finder</h3>
-                <p>Recommended stays and lodging tips.</p>
-              </div>
-            </div>
-          </section>
-
-          <aside className="assistant-sidebar">
-            <div className="panel">
-              <h3>Recent Searches</h3>
-
-              <ul>
-                <li>Phoenix Restaurants</li>
-                <li>Per Diem Policy</li>
-                <li>Charlotte Travelers</li>
-                <li>Airport Lounges</li>
-              </ul>
-            </div>
-
-            <div className="panel">
-              <h3>Popular Resources</h3>
-
-              <ul>
-                <li>Travel Policy</li>
-                <li>Expense Portal</li>
-                <li>Transition Checklist</li>
-                <li>Technology Resources</li>
-              </ul>
-            </div>
-
-            <div className="panel">
-              <h3>Community Trending</h3>
-
-              <ul>
-                <li>Best Nashville Restaurants</li>
-                <li>Favorite Airport Lounge</li>
-                <li>Most Photographed Cities</li>
-              </ul>
-            </div>
-          </aside>
-        </div>
       </main>
     </div>
   );
