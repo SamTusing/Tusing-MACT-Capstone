@@ -1,63 +1,63 @@
-import natGeoBadge from "../assets/galleries/badges/natgeo.jpg";
-import phoneEatsBadge from "../assets/galleries/badges/phoneeatsfirst.jpg";
-import sweetToothBadge from "../assets/galleries/badges/sweettooth.jpg";
-import americanaBadge from "../assets/galleries/badges/americana.jpg";
-import flightyBadge from "../assets/galleries/badges/flighty.jpg";
+import natGeoBadge from "../assets/galleries/badges/natgeo.JPG";
+import phoneEatsBadge from "../assets/galleries/badges/phoneeatsfirst.JPG";
+import sweetToothBadge from "../assets/galleries/badges/sweettooth.JPG";
+import americanaBadge from "../assets/galleries/badges/americana.JPG";
+import flightyBadge from "../assets/galleries/badges/flighty.JPG";
 import howdyBadge from "../assets/galleries/badges/howdy.jpg";
-import hikeBadge from "../assets/galleries/badges/takeahike.jpg";
-import sportsBadge from "../assets/galleries/badges/goteamgosports.jpg";
+import hikeBadge from "../assets/galleries/badges/takeahike.JPG";
+import sportsBadge from "../assets/galleries/badges/goteamgosports.JPG";
 
 const natGeo = Object.values(
-  import.meta.glob("../assets/galleries/natgeo/*.{jpg,jpeg,png,webp}", {
+  import.meta.glob("../assets/galleries/natgeo/*.{JPG,jpeg,png,webp}", {
     eager: true,
     import: "default",
   })
 );
 
 const phoneEats = Object.values(
-  import.meta.glob("../assets/galleries/phoneeatsfirst/*.{jpg,jpeg,png,webp}", {
+  import.meta.glob("../assets/galleries/phoneeatsfirst/*.{JPG,jpeg,png,webp}", {
     eager: true,
     import: "default",
   })
 );
 
 const sweetTooth = Object.values(
-  import.meta.glob("../assets/galleries/sweettooth/*.{jpg,jpeg,png,webp}", {
+  import.meta.glob("../assets/galleries/sweettooth/*.{JPG,jpeg,png,webp}", {
     eager: true,
     import: "default",
   })
 );
 
 const americana = Object.values(
-  import.meta.glob("../assets/galleries/americana/*.{jpg,jpeg,png,webp}", {
+  import.meta.glob("../assets/galleries/americana/*.{JPG,jpeg,png,webp}", {
     eager: true,
     import: "default",
   })
 );
 
 const flighty = Object.values(
-  import.meta.glob("../assets/galleries/flighty/*.{jpg,jpeg,png,webp}", {
+  import.meta.glob("../assets/galleries/flighty/*.{JPG,jpeg,png,webp}", {
     eager: true,
     import: "default",
   })
 );
 
 const sports = Object.values(
-  import.meta.glob("../assets/galleries/goteamgosports/*.{jpg,jpeg,png,webp}", {
+  import.meta.glob("../assets/galleries/goteamgosports/*.{JPG,jpeg,png,webp}", {
     eager: true,
     import: "default",
   })
 );
 
 const hike = Object.values(
-  import.meta.glob("../assets/galleries/takeahike/*.{jpg,jpeg,png,webp}", {
+  import.meta.glob("../assets/galleries/takeahike/*.{JPG,jpeg,png,webp}", {
     eager: true,
     import: "default",
   })
 );
 
 const howdy = Object.values(
-  import.meta.glob("../assets/galleries/howdy/*.{jpg,jpeg,png,webp}", {
+  import.meta.glob("../assets/galleries/howdy/*.{JPG,jpeg,png,webp}", {
     eager: true,
     import: "default",
   })

@@ -166,7 +166,7 @@ function Resources() {
                 />
               </div>
 
-              <span>Chapter 9 of 16</span>
+              <span>Chapter 14 of 16</span>
             </div>
           </div>
         </section>
