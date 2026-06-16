@@ -8,56 +8,56 @@ import hikeBadge from "../assets/galleries/badges/takeahike.JPG";
 import sportsBadge from "../assets/galleries/badges/goteamgosports.JPG";
 
 const natGeo = Object.values(
-  import.meta.glob("../assets/galleries/natgeo/*.{JPG,jpeg,png,webp}", {
+  import.meta.glob("../assets/galleries/natgeo/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}", {
     eager: true,
     import: "default",
   })
 );
 
 const phoneEats = Object.values(
-  import.meta.glob("../assets/galleries/phoneeatsfirst/*.{JPG,jpeg,png,webp}", {
+  import.meta.glob("../assets/galleries/phoneeatsfirst/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}", {
     eager: true,
     import: "default",
   })
 );
 
 const sweetTooth = Object.values(
-  import.meta.glob("../assets/galleries/sweettooth/*.{JPG,jpeg,png,webp}", {
+  import.meta.glob("../assets/galleries/sweettooth/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}", {
     eager: true,
     import: "default",
   })
 );
 
 const americana = Object.values(
-  import.meta.glob("../assets/galleries/americana/*.{JPG,jpeg,png,webp}", {
+  import.meta.glob("../assets/galleries/americana/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}", {
     eager: true,
     import: "default",
   })
 );
 
 const flighty = Object.values(
-  import.meta.glob("../assets/galleries/flighty/*.{JPG,jpeg,png,webp}", {
+  import.meta.glob("../assets/galleries/flighty/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}", {
     eager: true,
     import: "default",
   })
 );
 
 const sports = Object.values(
-  import.meta.glob("../assets/galleries/goteamgosports/*.{JPG,jpeg,png,webp}", {
+  import.meta.glob("../assets/galleries/goteamgosports/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}", {
     eager: true,
     import: "default",
   })
 );
 
 const hike = Object.values(
-  import.meta.glob("../assets/galleries/takeahike/*.{JPG,jpeg,png,webp}", {
+  import.meta.glob("../assets/galleries/takeahike/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}", {
     eager: true,
     import: "default",
   })
 );
 
 const howdy = Object.values(
-  import.meta.glob("../assets/galleries/howdy/*.{JPG,jpeg,png,webp}", {
+  import.meta.glob("../assets/galleries/howdy/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}", {
     eager: true,
     import: "default",
   })
