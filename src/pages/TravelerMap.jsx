@@ -159,6 +159,7 @@ function TravelerMap() {
   });
 
   return (
+    
     <div className="hub">
       <aside className="sidebar dark-sidebar">
         <div className="brand dark-brand">
@@ -169,7 +170,6 @@ function TravelerMap() {
             <p>Transition Team</p>
           </div>
         </div>
-<TopBar />
         <nav className="nav dark-nav">
           <Link to="/">🏠 <span>Dashboard</span></Link>
           <Link to="/map" className="active">🗺️ <span>Traveler Map</span></Link>
@@ -195,7 +195,6 @@ function TravelerMap() {
         </div>
       </aside>
 
-
       <main className="traveler-map-page">
         <header className="map-page-header">
           <div>
@@ -204,6 +203,10 @@ function TravelerMap() {
               See where our team is, what they’re working on, and what they
               recommend.
             </p>
+
+              <main className="main">
+    <TopBar />
+  </main>
           </div>
 
           <div className="map-header-actions">

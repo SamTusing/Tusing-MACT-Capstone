@@ -119,8 +119,11 @@ function Yearbook() {
             <h2>Traveler Hub</h2>
             <p>Transition Team</p>
           </div>
+              <main className="main">
+              <TopBar />
+            </main>
         </div>
-<TopBar />
+
         <nav className="nav dark-nav">
           <Link to="/">🏠 <span>Dashboard</span></Link>
           <Link to="/map">🗺️ <span>Traveler Map</span></Link>

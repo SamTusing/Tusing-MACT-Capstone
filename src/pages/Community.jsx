@@ -15,8 +15,11 @@ function Community() {
             <h2>Raymond James</h2>
             <p>Traveler Hub</p>
           </div>
+              <main className="main">
+              <TopBar />
+            </main>
         </div>
-        <TopBar />
+      
 
         <nav className="nav">
           <Link to="/">🏠 Dashboard</Link>
