@@ -7,6 +7,7 @@ import "../styles/yearbook.css";
 import YearbookPhotoMap from "../components/YearbookPhotoMap";
 
 import { galleryCategories } from "../data/galleryImages";
+import TopBar from "../components/TopBar";
 
 const travelers = [
   {
@@ -119,7 +120,7 @@ function Yearbook() {
             <p>Transition Team</p>
           </div>
         </div>
-
+<TopBar />
         <nav className="nav dark-nav">
           <Link to="/">🏠 <span>Dashboard</span></Link>
           <Link to="/map">🗺️ <span>Traveler Map</span></Link>

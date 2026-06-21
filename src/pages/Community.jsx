@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "../styles/dashboard.css";
 import "../styles/community.css";
 import { galleryCategories } from "../data/galleryImages";
+import TopBar from "../components/TopBar";
 
 function Community() {
   return (
@@ -15,6 +16,7 @@ function Community() {
             <p>Traveler Hub</p>
           </div>
         </div>
+        <TopBar />
 
         <nav className="nav">
           <Link to="/">🏠 Dashboard</Link>

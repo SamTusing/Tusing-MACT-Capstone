@@ -5,6 +5,7 @@ import "../styles/dashboard.css";
 import rjLogo from "../assets/RJlogo.jpg";
 import TravelerHubMap from "../components/TravelerHubMap";
 import { galleryCategories } from "../data/galleryImages";
+import TopBar from "../components/TopBar";
 
 const cityRecommendations = [
   {
@@ -98,20 +99,7 @@ function Dashboard() {
       </aside>
 
       <main className="main">
-        <header className="topbar">
-          <div className="title-row">
-            <h1>Traveler Hub</h1>
-            <span>Connect. Support. Succeed. Together.</span>
-          </div>
-
-          <div className="search">Search resources, people, locations...</div>
-
-          <div className="user">
-            <span>🔔</span>
-            <div className="user-avatar">ST</div>
-            <p>Hello, Sam</p>
-          </div>
-        </header>
+       <TopBar />
 
         <section className="content-grid">
           <div className="left-column">

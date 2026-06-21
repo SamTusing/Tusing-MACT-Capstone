@@ -171,6 +171,35 @@ body {
   box-shadow: 0 12px 30px rgba(18, 38, 63, 0.08);
 }
 
+.topbar-user-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.topbar-user-link:hover .user {
+  transform: translateY(-2px);
+}
+
+.user {
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+.topbar-profile-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar-profile-info strong {
+  color: #071f3f;
+  font-size: 14px;
+}
+
+.topbar-profile-info span {
+  font-size: 12px;
+  color: #6c7b91;
+}
+
 .title-row h1 {
   margin: 0;
   text-transform: uppercase;
