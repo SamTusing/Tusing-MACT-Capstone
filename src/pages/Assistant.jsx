@@ -14,9 +14,7 @@ function Assistant() {
             <h2>Raymond James</h2>
             <p>Traveler Hub</p>
           </div>
-              <main className="main">
-              <TopBar />
-            </main>
+              
         </div>
       
 
@@ -34,6 +32,7 @@ function Assistant() {
 
 
       <main className="assistant-page chatbot-theme">
+        <TopBar />
 
   <div className="tiny-plane plane-a">✈</div>
 <div className="tiny-plane plane-b">✈</div>

@@ -119,9 +119,7 @@ function Yearbook() {
             <h2>Traveler Hub</h2>
             <p>Transition Team</p>
           </div>
-              <main className="main">
-              <TopBar />
-            </main>
+            
         </div>
 
         <nav className="nav dark-nav">
@@ -141,6 +139,7 @@ function Yearbook() {
       </aside>
 
       <main className="yearbook-page">
+        <TopBar />
         <header className="yearbook-header">
           <div>
             <h1>Traveler Yearbook</h1>

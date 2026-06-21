@@ -24,9 +24,7 @@ function Resources() {
             <h2>Raymond James</h2>
             <p>Traveler Hub</p>
           </div>
-              <main className="main">
-              <TopBar />
-            </main>
+            
         </div>
 
         <nav className="nav">
@@ -42,6 +40,7 @@ function Resources() {
       </aside>
 
       <main className="resources-page">
+        <TopBar />
         <header className="resources-hero">
           <div>
             <p className="label">Resource Center</p>

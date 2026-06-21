@@ -15,9 +15,7 @@ function Community() {
             <h2>Raymond James</h2>
             <p>Traveler Hub</p>
           </div>
-              <main className="main">
-              <TopBar />
-            </main>
+          
         </div>
       
 
@@ -34,6 +32,7 @@ function Community() {
       </aside>
 
       <main className="community-page">
+        <TopBar />
         <header className="community-hero">
           <div>
             <p className="label">Community Hub</p>

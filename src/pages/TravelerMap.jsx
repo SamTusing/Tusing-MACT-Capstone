@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import "../styles/dashboard.css";
 import "../styles/travelerMap.css";
 
+import TopBar from "../components/TopBar.jsx";
 import TravelerHubMap from "../components/TravelerHubMap";
 import { galleryCategories } from "../data/galleryImages";
-import TopBar from "../components/TopBar.jsx";
 
 const assignments = [
   {
@@ -159,7 +159,6 @@ function TravelerMap() {
   });
 
   return (
-    
     <div className="hub">
       <aside className="sidebar dark-sidebar">
         <div className="brand dark-brand">
@@ -170,6 +169,7 @@ function TravelerMap() {
             <p>Transition Team</p>
           </div>
         </div>
+
         <nav className="nav dark-nav">
           <Link to="/">🏠 <span>Dashboard</span></Link>
           <Link to="/map" className="active">🗺️ <span>Traveler Map</span></Link>
@@ -196,6 +196,8 @@ function TravelerMap() {
       </aside>
 
       <main className="traveler-map-page">
+        <TopBar />
+
         <header className="map-page-header">
           <div>
             <h1>Traveler Map</h1>
@@ -203,10 +205,6 @@ function TravelerMap() {
               See where our team is, what they’re working on, and what they
               recommend.
             </p>
-
-              <main className="main">
-    <TopBar />
-  </main>
           </div>
 
           <div className="map-header-actions">
