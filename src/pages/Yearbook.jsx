@@ -7,7 +7,7 @@ import "../styles/yearbook.css";
 import YearbookPhotoMap from "../components/YearbookPhotoMap";
 
 import { galleryCategories } from "../data/galleryImages";
-import TopBar from "../components/TopBar";
+import TopBar from "../components/TopBar.jsx";
 
 const travelers = [
   {

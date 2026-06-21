@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "../styles/dashboard.css";
 import "../styles/community.css";
 import { galleryCategories } from "../data/galleryImages";
-import TopBar from "../components/TopBar";
+import TopBar from "../components/TopBar.jsx";
 
 function Community() {
   return (

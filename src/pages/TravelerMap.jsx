@@ -6,7 +6,7 @@ import "../styles/travelerMap.css";
 
 import TravelerHubMap from "../components/TravelerHubMap";
 import { galleryCategories } from "../data/galleryImages";
-import TopBar from "../components/TopBar";
+import TopBar from "../components/TopBar.jsx";
 
 const assignments = [
   {

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "../styles/dashboard.css";
 import "../styles/assistant.css";
-import TopBar from "../components/TopBar";
+import TopBar from "../components/TopBar.jsx";
 
 function Assistant() {
   return (
