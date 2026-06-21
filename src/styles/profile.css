@@ -607,6 +607,12 @@
   box-shadow: 0 12px 24px rgba(18, 38, 63, 0.08);
   border-color: #0b5fc6;
   background: #eef6ff;
+  color: #082a55;
+}
+
+.add-photo-category:hover span,
+.add-photo-category.selected span {
+  color: #082a55;
 }
 
 .add-photo-category img {
