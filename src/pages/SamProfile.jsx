@@ -230,6 +230,7 @@ function SamProfile() {
 
           <div className="profile-card-large panel">
             <h2>Travel Galleries</h2>
+            
 
             <div className="gallery-row">
               {Object.entries(galleryCategories).map(([key, category]) => (
@@ -245,6 +246,13 @@ function SamProfile() {
             <button className="outline-button" onClick={() => setActiveModal("galleries")}>
               View All Galleries
             </button>
+
+            <button
+  className="add-photo-modal-button"
+  onClick={() => setShowAddPhoto(true)}
+>
+  ＋ Add Photo
+</button>
           </div>
 
           <div className="profile-card-large panel">
@@ -427,6 +435,32 @@ function SamProfile() {
             </div>
           </div>
         )}
+
+        {showAddPhoto && (
+  <div className="modal-backdrop" onClick={() => setShowAddPhoto(false)}>
+    <div className="profile-modal" onClick={(e) => e.stopPropagation()}>
+      <button className="modal-close" onClick={() => setShowAddPhoto(false)}>
+        ×
+      </button>
+
+      <h2>Add a Photo</h2>
+      <p>Choose a yearbook category for your travel memory.</p>
+
+      <div className="add-photo-category-grid">
+        {Object.entries(galleryCategories).map(([key, category]) => (
+          <button key={key} className="add-photo-category">
+            <img src={category.badge} alt={category.title} />
+            <span>{category.title}</span>
+          </button>
+        ))}
+      </div>
+
+      <div className="upload-placeholder">
+        📸 Upload functionality will be connected during the database phase.
+      </div>
+    </div>
+  </div>
+)}
       </main>
     </div>
   );
