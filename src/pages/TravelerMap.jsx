@@ -6,7 +6,7 @@ import "../styles/travelerMap.css";
 
 import TravelerHubMap from "../components/TravelerHubMap";
 import { galleryCategories } from "../data/galleryImages";
-import TopBar from "../components/Topbar.jsx";
+import TopBar from "../components/TopBar";
 
 const assignments = [
   {
@@ -169,7 +169,7 @@ function TravelerMap() {
             <p>Transition Team</p>
           </div>
         </div>
-
+<TopBar />
         <nav className="nav dark-nav">
           <Link to="/">🏠 <span>Dashboard</span></Link>
           <Link to="/map" className="active">🗺️ <span>Traveler Map</span></Link>
@@ -195,7 +195,7 @@ function TravelerMap() {
         </div>
       </aside>
 
-  <Topbar />
+
       <main className="traveler-map-page">
         <header className="map-page-header">
           <div>

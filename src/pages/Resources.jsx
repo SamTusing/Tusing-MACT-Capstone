@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "../styles/dashboard.css";
 import "../styles/resources.css";
-import TopBar from "../components/Topbar.jsx";
+import TopBar from "../components/TopBar";
 
 
 <a
@@ -25,7 +25,7 @@ function Resources() {
             <p>Traveler Hub</p>
           </div>
         </div>
-  <Topbar />
+<TopBar />
         <nav className="nav">
           <Link to="/">🏠 Dashboard</Link>
           <Link to="/map">🗺️ Traveler Map</Link>

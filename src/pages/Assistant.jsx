@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "../styles/dashboard.css";
 import "../styles/assistant.css";
-import TopBar from "../components/Topbar.jsx";
+import TopBar from "../components/TopBar";
 
 function Assistant() {
   return (
@@ -15,7 +15,7 @@ function Assistant() {
             <p>Traveler Hub</p>
           </div>
         </div>
-        <Topbar />
+        <TopBar />
 
         <nav className="nav">
           <Link to="/">🏠 Dashboard</Link>

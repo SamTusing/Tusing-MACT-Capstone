@@ -5,7 +5,7 @@ import "../styles/dashboard.css";
 import rjLogo from "../assets/RJlogo.jpg";
 import TravelerHubMap from "../components/TravelerHubMap";
 import { galleryCategories } from "../data/galleryImages";
-import TopBar from "../components/Topbar.jsx";
+import TopBar from "../components/TopBar";
 
 const cityRecommendations = [
   {
@@ -99,7 +99,7 @@ function Dashboard() {
       </aside>
 
       <main className="main">
-      <Topbar />
+       <TopBar />
 
         <section className="content-grid">
           <div className="left-column">
