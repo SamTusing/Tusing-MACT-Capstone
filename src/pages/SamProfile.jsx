@@ -71,6 +71,8 @@ function SamProfile() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [showAddPhoto, setShowAddPhoto] = useState(false);
+  const [photoCategory, setPhotoCategory] = useState("");
 
   const openImage = (categoryKey, image, index) => {
     setSelectedCategory(categoryKey);
@@ -87,6 +89,7 @@ function SamProfile() {
   const showNextImage = () => {
     const images = galleryCategories[selectedCategory].images;
     const nextIndex = selectedIndex === images.length - 1 ? 0 : selectedIndex + 1;
+
     setSelectedIndex(nextIndex);
     setSelectedImage(images[nextIndex]);
   };
@@ -94,6 +97,7 @@ function SamProfile() {
   const showPreviousImage = () => {
     const images = galleryCategories[selectedCategory].images;
     const previousIndex = selectedIndex === 0 ? images.length - 1 : selectedIndex - 1;
+
     setSelectedIndex(previousIndex);
     setSelectedImage(images[previousIndex]);
   };
@@ -139,7 +143,7 @@ function SamProfile() {
           <div className="profile-main-info">
             <h1>Sam T.</h1>
             <p className="role">Transition Consultant</p>
-            <p className="location">📍 Dallas, Texas </p>
+            <p className="location">📍 Dallas, Texas</p>
 
             <div className="profile-tags">
               <span>Transitions Expert</span>
@@ -188,7 +192,10 @@ function SamProfile() {
 
               <div>
                 <strong>About Me</strong>
-                <p>I love solving transition issues, helping advisors, and documenting travel experiences.</p>
+                <p>
+                  I love solving transition issues, helping advisors,
+                  and documenting travel experiences.
+                </p>
               </div>
             </div>
           </div>
@@ -221,16 +228,17 @@ function SamProfile() {
           <Link to="/in-transit" className="card-link">
             <div className="profile-card-large panel">
               <h2>Travel Map →</h2>
+
               <div className="profile-map">
                 <MiniTransitMap />
               </div>
+
               <button className="outline-button">Open In Transit Map</button>
             </div>
           </Link>
 
           <div className="profile-card-large panel">
             <h2>Travel Galleries</h2>
-            
 
             <div className="gallery-row">
               {Object.entries(galleryCategories).map(([key, category]) => (
@@ -238,56 +246,50 @@ function SamProfile() {
                   <div className="gallery-thumb">
                     <img src={category.badge} alt={category.title} />
                   </div>
+
                   <p>{category.title}</p>
                 </button>
               ))}
             </div>
 
-            <button className="outline-button" onClick={() => setActiveModal("galleries")}>
+            <button
+              className="outline-button"
+              onClick={() => setActiveModal("galleries")}
+            >
               View All Galleries
             </button>
-
-            <button
-  className="add-photo-modal-button"
-  onClick={() => setShowAddPhoto(true)}
->
-  ＋ Add Photo
-</button>
           </div>
 
           <div className="profile-card-large panel">
-  <h2>Sam's Recommendations</h2>
+            <h2>Sam's Recommendations</h2>
 
-  <div className="recommendation-preview">
-  {restaurants.slice(0, 3).map((restaurant, index) => (
-    <div
-      key={index}
-      className="recommendation-preview-item"
-    >
-      <div>
-        <strong>{restaurant.name}</strong>
-        <p>{restaurant.city}</p>
-      </div>
+            <div className="recommendation-preview">
+              {restaurants.slice(0, 3).map((restaurant, index) => (
+                <div key={index} className="recommendation-preview-item">
+                  <div>
+                    <strong>{restaurant.name}</strong>
+                    <p>{restaurant.city}</p>
+                  </div>
 
-      <a
-        href={restaurant.googleUrl}
-        target="_blank"
-        rel="noreferrer"
-        className="preview-google-link"
-      >
-        Google →
-      </a>
-    </div>
-  ))}
-</div>
+                  <a
+                    href={restaurant.googleUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="preview-google-link"
+                  >
+                    Google →
+                  </a>
+                </div>
+              ))}
+            </div>
 
-  <button
-    className="outline-button"
-    onClick={() => setActiveModal("restaurants")}
-  >
-    View All Recommendations
-  </button>
-</div>
+            <button
+              className="outline-button"
+              onClick={() => setActiveModal("restaurants")}
+            >
+              View All Recommendations
+            </button>
+          </div>
 
           <div className="profile-card-large panel">
             <h2>Assignment History</h2>
@@ -313,8 +315,19 @@ function SamProfile() {
 
               {activeModal === "galleries" && (
                 <>
-                  <h2>Sam’s Travel Galleries</h2>
-                  <p>Browse travel moments by category.</p>
+                  <div className="modal-title-row">
+                    <div>
+                      <h2>Sam’s Travel Galleries</h2>
+                      <p>Browse travel moments by category.</p>
+                    </div>
+
+                    <button
+                      className="add-photo-modal-button"
+                      onClick={() => setShowAddPhoto(true)}
+                    >
+                      ＋ Add Photo
+                    </button>
+                  </div>
 
                   <div className="modal-grid">
                     {Object.entries(galleryCategories).map(([key, category]) => (
@@ -364,36 +377,36 @@ function SamProfile() {
                   <p>Favorite traveler-tested food stops from assignments.</p>
 
                   <div className="modal-list restaurant-list">
-  {restaurants.map((restaurant, index) => (
-    <a
-      key={index}
-      href={restaurant.googleUrl}
-      target="_blank"
-      rel="noreferrer"
-      className="restaurant-card"
-    >
-      <div className="restaurant-header">
-        <div className="restaurant-name">
-          🍽️ {restaurant.name}
-        </div>
+                    {restaurants.map((restaurant, index) => (
+                      <a
+                        key={index}
+                        href={restaurant.googleUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="restaurant-card"
+                      >
+                        <div className="restaurant-header">
+                          <div className="restaurant-name">
+                            🍽️ {restaurant.name}
+                          </div>
 
-        <div className="restaurant-location">
-          {restaurant.city}
-        </div>
-      </div>
+                          <div className="restaurant-location">
+                            {restaurant.city}
+                          </div>
+                        </div>
 
-      <div className="restaurant-note">
-        "{restaurant.note}"
-      </div>
+                        <div className="restaurant-note">
+                          "{restaurant.note}"
+                        </div>
 
-      <div className="restaurant-footer">
-        <span className="google-link">
-          Open on Google →
-        </span>
-      </div>
-    </a>
-  ))}
-</div>
+                        <div className="restaurant-footer">
+                          <span className="google-link">
+                            Open on Google →
+                          </span>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
                 </>
               )}
             </div>
@@ -437,30 +450,61 @@ function SamProfile() {
         )}
 
         {showAddPhoto && (
-  <div className="modal-backdrop" onClick={() => setShowAddPhoto(false)}>
-    <div className="profile-modal" onClick={(e) => e.stopPropagation()}>
-      <button className="modal-close" onClick={() => setShowAddPhoto(false)}>
-        ×
-      </button>
+          <div className="modal-backdrop" onClick={() => setShowAddPhoto(false)}>
+            <div className="profile-modal" onClick={(e) => e.stopPropagation()}>
+              <button
+                className="modal-close"
+                onClick={() => setShowAddPhoto(false)}
+              >
+                ×
+              </button>
 
-      <h2>Add a Photo</h2>
-      <p>Choose a yearbook category for your travel memory.</p>
+              <h2>Add a Photo</h2>
+              <p>
+                Choose a yearbook category and preview where upload
+                functionality will live in the future version.
+              </p>
 
-      <div className="add-photo-category-grid">
-        {Object.entries(galleryCategories).map(([key, category]) => (
-          <button key={key} className="add-photo-category">
-            <img src={category.badge} alt={category.title} />
-            <span>{category.title}</span>
-          </button>
-        ))}
-      </div>
+              <div className="upload-dropzone">
+                <div className="upload-icon">📸</div>
+                <h3>Drag & Drop Photos Here</h3>
+                <p>or browse files from your device</p>
 
-      <div className="upload-placeholder">
-        📸 Upload functionality will be connected during the database phase.
-      </div>
-    </div>
-  </div>
-)}
+                <button className="upload-button">
+                  Browse Files
+                </button>
+              </div>
+
+              <h3 className="category-select-title">Choose Category</h3>
+
+              <div className="add-photo-category-grid">
+                {Object.entries(galleryCategories).map(([key, category]) => (
+                  <button
+                    key={key}
+                    className={
+                      photoCategory === key
+                        ? "add-photo-category selected"
+                        : "add-photo-category"
+                    }
+                    onClick={() => setPhotoCategory(key)}
+                  >
+                    <img src={category.badge} alt={category.title} />
+                    <span>{category.title}</span>
+                  </button>
+                ))}
+              </div>
+
+              {photoCategory && (
+                <div className="upload-placeholder">
+                  Selected category:{" "}
+                  <strong>{galleryCategories[photoCategory].title}</strong>
+                  <br />
+                  Upload functionality will connect during the database phase.
+                </div>
+              )}
+            </div>
+          </div>
+        )}
       </main>
     </div>
   );
