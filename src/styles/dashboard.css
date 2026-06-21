@@ -169,6 +169,7 @@ body {
   align-items: center;
   gap: 20px;
   box-shadow: 0 12px 30px rgba(18, 38, 63, 0.08);
+  margin-bottom: 28px;
 }
 
 .topbar-user-link {
