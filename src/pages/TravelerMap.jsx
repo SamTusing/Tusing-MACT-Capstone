@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+
 import "../styles/dashboard.css";
 import "../styles/travelerMap.css";
 
@@ -6,28 +8,155 @@ import TravelerHubMap from "../components/TravelerHubMap";
 import { galleryCategories } from "../data/galleryImages";
 
 const assignments = [
-  { city: "Dallas, TX", type: "Branch Transition", dates: "May 12 – May 30", status: "In Progress" },
-  { city: "Charlotte, NC", type: "Technology Conversion", dates: "May 10 – May 28", status: "In Progress" },
-  { city: "St. Petersburg, FL", type: "Advisory Support", dates: "May 8 – May 26", status: "Upcoming" },
-  { city: "Denver, CO", type: "Branch Optimization", dates: "May 15 – Jun 2", status: "Upcoming" },
+  {
+    city: "Dallas, TX",
+    type: "Branch Transition",
+    dates: "May 12 – May 30",
+    status: "In Progress",
+  },
+  {
+    city: "Charlotte, NC",
+    type: "Technology Conversion",
+    dates: "May 10 – May 28",
+    status: "In Progress",
+  },
+  {
+    city: "St. Petersburg, FL",
+    type: "Advisory Support",
+    dates: "May 8 – May 26",
+    status: "Upcoming",
+  },
+  {
+    city: "Denver, CO",
+    type: "Branch Optimization",
+    dates: "May 15 – Jun 2",
+    status: "Upcoming",
+  },
 ];
 
 const recommendations = [
-  { tag: "Phone Eats First", badgeKey: "phoneEats", name: "Pecan Lodge BBQ", city: "Dallas, TX", by: "Alex R." },
-  { tag: "Sweet Tooth", badgeKey: "sweetTooth", name: "Eataly Dallas", city: "Dallas, TX", by: "Morgan L." },
-  { tag: "Americana", badgeKey: "americana", name: "The Sixth Floor Museum", city: "Dallas, TX", by: "Chris D." },
-  { tag: "Nat Geo", badgeKey: "natGeo", name: "Klyde Warren Park", city: "Dallas, TX", by: "Taylor M." },
+  {
+    city: "Dallas, TX",
+    category: "food",
+    tag: "Phone Eats First",
+    badgeKey: "phoneEats",
+    name: "Pecan Lodge BBQ",
+    by: "Alex R.",
+  },
+  {
+    city: "Dallas, TX",
+    category: "activities",
+    tag: "Americana",
+    badgeKey: "americana",
+    name: "The Sixth Floor Museum",
+    by: "Chris D.",
+  },
+  {
+    city: "Nashville, TN",
+    category: "entertainment",
+    tag: "Americana",
+    badgeKey: "americana",
+    name: "The Gulch Live Music",
+    by: "Sam T.",
+  },
+  {
+    city: "Nashville, TN",
+    category: "food",
+    tag: "Phone Eats First",
+    badgeKey: "phoneEats",
+    name: "Butcher & Bee",
+    by: "Brooke D.",
+  },
+  {
+    city: "Phoenix, AZ",
+    category: "coffee",
+    tag: "Phone Eats First",
+    badgeKey: "phoneEats",
+    name: "Cartel Roasting Co.",
+    by: "Jamie F.",
+  },
+  {
+    city: "Phoenix, AZ",
+    category: "hotels",
+    tag: "Flighty",
+    badgeKey: "flighty",
+    name: "The Camby Hotel",
+    by: "Alex R.",
+  },
+  {
+    city: "Charlotte, NC",
+    category: "food",
+    tag: "Phone Eats First",
+    badgeKey: "phoneEats",
+    name: "Optimist Hall",
+    by: "Sam T.",
+  },
+  {
+    city: "Charlotte, NC",
+    category: "coffee",
+    tag: "Phone Eats First",
+    badgeKey: "phoneEats",
+    name: "Not Just Coffee",
+    by: "Traveler C.",
+  },
 ];
 
 const moments = [
-  { tag: "Nat Geo", badgeKey: "natGeo", title: "Zion National Park", city: "Utah" },
-  { tag: "Americana", badgeKey: "americana", title: "Date night before branch cutover", city: "Colorado" },
-  { tag: "Phone Eats First", badgeKey: "phoneEats", title: "Best burger in Denver", city: "Denver, CO" },
-  { tag: "Sweet Tooth", badgeKey: "sweetTooth", title: "Salt & Straw never disappoints", city: "Portland, OR" },
-  { tag: "Flighty", badgeKey: "flighty", title: "Early morning airport run", city: "Seattle, WA" },
+  {
+    tag: "Nat Geo",
+    badgeKey: "natGeo",
+    title: "Zion National Park",
+    city: "Utah",
+  },
+  {
+    tag: "Americana",
+    badgeKey: "americana",
+    title: "Date night before branch cutover",
+    city: "Colorado",
+  },
+  {
+    tag: "Phone Eats First",
+    badgeKey: "phoneEats",
+    title: "Best burger in Denver",
+    city: "Denver, CO",
+  },
+  {
+    tag: "Sweet Tooth",
+    badgeKey: "sweetTooth",
+    title: "Salt & Straw never disappoints",
+    city: "Portland, OR",
+  },
+  {
+    tag: "Flighty",
+    badgeKey: "flighty",
+    title: "Early morning airport run",
+    city: "Seattle, WA",
+  },
 ];
 
 function TravelerMap() {
+  const [selectedCity, setSelectedCity] = useState("Dallas, TX");
+  const [selectedCategory, setSelectedCategory] = useState("all");
+
+  const cities = [...new Set(recommendations.map((item) => item.city))];
+
+  const categories = [
+    "all",
+    "food",
+    "entertainment",
+    "activities",
+    "hotels",
+    "coffee",
+  ];
+
+  const filteredRecommendations = recommendations.filter((item) => {
+    const cityMatch = item.city === selectedCity;
+    const categoryMatch =
+      selectedCategory === "all" || item.category === selectedCategory;
+
+    return cityMatch && categoryMatch;
+  });
+
   return (
     <div className="hub">
       <aside className="sidebar dark-sidebar">
@@ -69,7 +198,10 @@ function TravelerMap() {
         <header className="map-page-header">
           <div>
             <h1>Traveler Map</h1>
-            <p>See where our team is, what they’re working on, and what they recommend.</p>
+            <p>
+              See where our team is, what they’re working on, and what they
+              recommend.
+            </p>
           </div>
 
           <div className="map-header-actions">
@@ -86,21 +218,43 @@ function TravelerMap() {
 
           <aside className="city-recs-panel panel">
             <div className="city-recs-header">
-              <h2>City Recommendations</h2>
-              <strong>📍 Dallas, TX</strong>
+              <div>
+                <h2>City Recommendations</h2>
+                <p>Traveler-tested places by city and category.</p>
+              </div>
+
+              <select
+                className="city-select"
+                value={selectedCity}
+                onChange={(e) => {
+                  setSelectedCity(e.target.value);
+                  setSelectedCategory("all");
+                }}
+              >
+                {cities.map((city) => (
+                  <option key={city} value={city}>
+                    {city}
+                  </option>
+                ))}
+              </select>
             </div>
 
             <div className="rec-tabs">
-              <button className="active">All</button>
-              <button>Food</button>
-              <button>Entertainment</button>
-              <button>Activities</button>
-              <button>Hotels</button>
-              <button>Coffee</button>
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  className={selectedCategory === category ? "active" : ""}
+                  onClick={() => setSelectedCategory(category)}
+                >
+                  {category === "all"
+                    ? "All"
+                    : category.charAt(0).toUpperCase() + category.slice(1)}
+                </button>
+              ))}
             </div>
 
             <div className="recommendation-cards">
-              {recommendations.map((item) => (
+              {filteredRecommendations.map((item) => (
                 <div className="recommendation-tile" key={item.name}>
                   <div className="rec-image">
                     <img
@@ -117,8 +271,14 @@ function TravelerMap() {
               ))}
             </div>
 
+            {filteredRecommendations.length === 0 && (
+              <div className="empty-recommendations">
+                No recommendations yet for this category.
+              </div>
+            )}
+
             <button className="wide-button">
-              View All Dallas Recommendations →
+              View All {selectedCity} Recommendations →
             </button>
           </aside>
 
@@ -145,7 +305,7 @@ function TravelerMap() {
             <div className="spotlight-header">
               <div>
                 <p>City Spotlight</p>
-                <h2>Nashville, TN</h2>
+                <h2>{selectedCity}</h2>
               </div>
 
               <span>● Active</span>
@@ -163,8 +323,8 @@ function TravelerMap() {
             <div className="top-tip">
               <strong>Top Tip from Travelers</strong>
               <p>
-                “The Gulch is amazing for dinner spots and live music on the weekends!”
-                — Sam T.
+                “Check the local traveler recommendations before your first
+                evening in town.” — Sam T.
               </p>
             </div>
           </section>

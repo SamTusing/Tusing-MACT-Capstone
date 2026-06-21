@@ -548,3 +548,37 @@
     grid-template-columns: 1fr;
   }
 }
+
+.city-recs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.city-recs-header p {
+  margin: 6px 0 0;
+  color: #53657d;
+  font-size: 13px;
+}
+
+.city-select {
+  border: 1px solid #d7e1ee;
+  background: #f8fbff;
+  color: #082a55;
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.empty-recommendations {
+  min-height: 160px;
+  border: 1px dashed #bfd0e3;
+  border-radius: 18px;
+  color: #53657d;
+  display: grid;
+  place-items: center;
+  background: #f8fbff;
+  font-weight: 700;
+}
